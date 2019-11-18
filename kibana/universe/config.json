@@ -1,0 +1,127 @@
+
+{
+  "type": "object",
+  "properties": {
+    "service": {
+      "type": "object",
+      "description": "DC/OS service configuration properties",
+      "properties": {
+        "name": {
+          "description": "The name of the service instance",
+          "type": "string",
+          "default": "kibana",
+          "title": "Service name"
+        },
+        "user": {
+          "description": "The user that the service will run as.",
+          "type": "string",
+          "default": "root",
+          "title": "User"
+        },
+        "virtual_network_enabled": {
+          "description": "Enable virtual networking",
+          "type": "boolean",
+          "default": false
+        },
+        "virtual_network_name": {
+          "description": "The name of the virtual network to join",
+          "type": "string",
+          "default": "dcos"
+        },
+        "virtual_network_plugin_labels": {
+          "description": "Labels to pass to the virtual network plugin. Comma-separated key:value pairs. For example: k_0:v_0,k_1:v_1,...,k_n:v_n",
+          "type": "string",
+          "default": ""
+        }
+      },
+      "required": [
+        "name",
+        "user"
+      ]
+    },
+    "node": {
+      "description": "kibana-searchguard pod configuration properties",
+      "type": "object",
+      "properties": {
+        "count": {
+          "title": "Node count",
+          "description": "Number of kibana-searchguard pods to run",
+          "type": "integer",
+          "default": 1
+        },
+        "placement_constraint": {
+          "title": "Placement constraint",
+          "description": "Placement constraints for nodes. Example: [[\"hostname\", \"UNIQUE\"]]",
+          "type": "string",
+          "default": "[[\"hostname\", \"UNIQUE\"]]",
+          "media": {
+            "type": "application/x-zone-constraints+json"
+          }
+        },
+        "cpus": {
+          "title": "CPU count",
+          "description": "kibana-searchguard pod CPU requirements",
+          "type": "number",
+          "default": 0.1
+        },
+        "mem": {
+          "title": "Memory size (MB)",
+          "description": "kibana-searchguard pod mem requirements (in MB)",
+          "type": "integer",
+          "default": 252
+        },
+        "disk": {
+          "title": "Disk size (MB)",
+          "description": "kibana-searchguard pod persistent disk requirements (in MB)",
+          "type": "integer",
+          "default": 25
+        },
+        "disk_type": {
+          "title": "Disk type [ROOT, MOUNT]",
+          "description": "Mount volumes require preconfiguration in DC/OS",
+          "enum": [
+            "ROOT",
+            "MOUNT"
+          ],
+          "default": "ROOT"
+        }
+      },
+      "required": [
+        "count",
+        "cpus",
+        "mem",
+        "disk",
+        "disk_type"
+      ]
+    },
+    "kibana": {
+      "type": "object",
+      "description": "kibana configuration properties",
+      "properties": {
+        "elastic_url": {
+          "description": "elastic URL to connect to",
+          "type": "string"
+        },
+        "extra_config_base64": {
+          "description": "",
+          "type": "string",
+          "default": ""
+        },
+        "username_secret": {
+          "description": "Path to secret containg username to use when authenticating to elastic",
+          "type": "string"
+        },
+        "password_secret": {
+          "description": "Path to secret containg password to use when authenticating to elastic",
+          "type": "string"
+        }
+      },
+      "required": [
+        "elastic_url",
+        "extra_config_base64",
+        "username_secret",
+        "password_secret"
+      ]
+    }
+  }
+}

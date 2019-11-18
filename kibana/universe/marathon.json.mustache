@@ -1,0 +1,86 @@
+{
+  "id": "{{service.name}}",
+  "user": "{{service.user}}",
+  "instances": {{node.count}},
+  "cpus": {{node.cpus}},
+  "mem": {{node.mem}},
+  "cmd": "$MESOS_SANDBOX/kibana_setup.sh",
+  "backoffFactor": 1.15,
+  "backoffSeconds": 1,
+  "gpus": 0,
+  "disk": 0,
+  "container": {
+    "type": "MESOS",
+    "volumes": [],
+    "portMappings": [
+      {
+        "containerPort": 5601,
+        "protocol": "tcp",
+        "name": "kibana",
+        "labels": {
+          "VIP_0": "/web.{{service.name}}:80"
+        },
+        "servicePort": 0
+      }
+    ]
+  },
+  "env": {
+    "PACKAGE_NAME": "opendistro-kibana",
+    "PACKAGE_VERSION": "%(package-version)s",
+    "PACKAGE_BUILD_TIME_EPOCH_MS": "%(time_epoch_ms)s",
+    "PACKAGE_BUILD_TIME_STR": "%(time_str)s",
+    "ELASTICSEARCH_URL": "{{kibana.elastic_url}}",
+    "ELASTIC_VERSION": "%(elastic_version)s",
+    "OPENDISTRO_SECURITY_VERSION": "%(opendistro_security_version)s",
+    "KIBANA_ELASTICSEARCH_TLS": "true",
+    "KIBANA_PASSWORD": {"secret": "kibana-password"},
+    "KIBANA_USER": {"secret": "kibana-username"},
+    "CUSTOM_YAML_BLOCK_BASE64": "{{kibana.custom_kibana_yml}}"
+  },
+  "fetch": [
+    { "uri": "{{resource.assets.uris.kibana}}", "executable": false, "extract": true, "cache": true }, 
+    { "uri": "{{resource.assets.uris.opendistro_security_plugin}}", "executable": false, "extract": false, "cache": true },
+    { "uri": "{{resource.assets.uris.kibana_setup}}", "extract": false, "cache": false, "executable": true }
+  ],
+  "healthChecks": [
+    {
+      "delaySeconds": 180,
+      "gracePeriodSeconds": 900,
+      "intervalSeconds": 30,
+      "ipProtocol": "IPv4",
+      "maxConsecutiveFailures": 4,
+      "path": "/status",
+      "portIndex": 0,
+      "protocol": "MESOS_HTTP",
+      "timeoutSeconds": 30
+    }
+  ],
+  "labels": {
+  },
+  "networks": [
+    {
+      "name": "dcos",
+      "mode": "container"
+    }
+  ],
+  "requirePorts": false,
+  "user": "nobody",
+  "maxLaunchDelaySeconds": 3600,
+  "killSelection": "YOUNGEST_FIRST",
+  "upgradeStrategy": {
+    "maximumOverCapacity": 1,
+    "minimumHealthCapacity": 1
+  },
+  "unreachableStrategy": {
+   "inactiveAfterSeconds": 0,
+   "expungeAfterSeconds": 0
+  },
+  "secrets": {
+    "kibana-username": {
+      "source": "{{kibana.username_secret}}"
+    },
+    "kibana-password": {
+      "source": "{{kibana.password_secret}}"
+    }
+  }
+}

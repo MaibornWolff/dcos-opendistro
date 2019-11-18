@@ -1,0 +1,17 @@
+{
+    "kibana": {
+        "elastic_url": "https://coordinator.opendistro.l4lb.thisdcos.directory:9200",
+        "username_secret": "/opendistro-kibana/username",
+        "password_secret": "/opendistro-kibana/password"
+    },
+    "service": {
+        "name": "kibana-opendistro",
+        "virtual_network_enabled": true,
+        "virtual_network_name": "dcos"
+    },
+    "node": {
+        "count": 1,
+        "mem": 8192,
+        "cpus": 1
+    }
+}

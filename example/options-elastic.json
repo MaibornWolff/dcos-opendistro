@@ -1,0 +1,42 @@
+{
+    "data_nodes": {
+        "count": 2,
+        "cpus": 1,
+        "disk": 10000,
+        "disk_type": "MOUNT",
+        "heap": {
+            "size": 1024
+        },
+        "mem": 2048
+    },
+    "elasticsearch": {
+        "health_user": "monitor",
+        "health_user_password": "CHANGEME",
+        "plugins": "",
+        "opendistro_security_config_zip": "{{s3_base_path}}/securityconfig.zip"
+    },
+    "coordinator_nodes": {
+        "count": 1,
+        "mem": 2048,
+        "heap": {
+            "size": 1024
+        },
+        "cpus": 1
+    },
+    "config_node": {
+        "enabled": true
+    },
+    "service": {
+        "name": "opendistro",
+        "security": {
+            "transport_encryption": {
+                "enabled": true
+            }
+        },
+        "service_account": "elastic-principal",
+        "service_account_secret": "elastic-principal",
+        "virtual_network_enabled": true,
+        "virtual_network_name": "dcos",
+        "update_strategy": "serial"
+    }
+}

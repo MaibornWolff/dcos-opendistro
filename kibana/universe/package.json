@@ -1,0 +1,16 @@
+
+{
+  "packagingVersion": "4.0",
+  "upgradesFrom": ["0.1.0-1.2.0"],
+  "downgradesTo": ["0.1.0-1.2.0"],
+  "minDcosReleaseVersion": "1.12",
+  "name": "opendistro-kibana",
+  "version": "0.1.0-1.2.0",
+  "maintainer": "MaibornWolff",
+  "description": "MaibornWolff",
+  "selected": false,
+  "framework": false,
+  "tags": ["elastic", "kibana", "opendistro"],
+  "postInstallNotes": "DC/OS YOURNAMEHERE is being installed!\n\n\tDocumentation: {{documentation-path}}\n\tIssues: {{issues-path}}",
+  "postUninstallNotes": "DC/OS YOURNAMEHERE is being uninstalled."
+}
