@@ -842,6 +842,11 @@
           "type": "boolean",
           "default": true
         },
+        "xpack_security_enabled": {
+          "description": "Set to false if xpack_security isn't required",
+          "type": "boolean",
+          "default": true
+        },
         "action_destructive_requires_name": {
           "description": "In order to disable allowing to delete indices via wildcards or _all, set it as true.",
           "type": "boolean",

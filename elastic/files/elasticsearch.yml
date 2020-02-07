@@ -68,6 +68,10 @@ opendistro_security.ssl.http.truststore_filepath: {{MESOS_SANDBOX}}/server.trust
 opendistro_security.ssl.http.truststore_password: notsecure
 {{/SECURITY_ENABLED}}
 
+{{^SECURITY_ENABLED}}
+opendistro_security.disabled: true
+{{/SECURITY_ENABLED}}
+
 {{#NODE_STORE_ALLOW_MMAP}}
 # https://www.elastic.co/guide/en/elasticsearch/reference/7.3/index-modules-store.html
 node.store.allow_mmap: {{NODE_STORE_ALLOW_MMAP}}

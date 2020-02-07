@@ -24,7 +24,7 @@ For elasticsearch change into the `elastic` folder. Then
 * Upload the elastic package. Either
   * with minio: `dcosdev up`  (environment variables `MINIO_HOST`, `MINIO_ACCESS_KEY` and `MINIO_SECRET_KEY` must be set)
   * with S3: `dcosdev release 0 <bucket-name>`.
-* Add repo-file to your clusters package repositories (e.g. for S3: `dcos package repo add opendistro--index=0 https://<bucket-name>.s3.amazonaws.com/packages/opendistro/0.1.0-1.2.0/opendistro-repo.json`)
+* Add repo-file to your clusters package repositories (e.g. for S3: `dcos package repo add opendistro --index=0 https://<bucket-name>.s3.amazonaws.com/packages/opendistro/0.1.0-1.2.0/opendistro-repo.json`)
 * Prepare security config (see [opendistro documentation](https://opendistro.github.io/for-elasticsearch-docs/docs/security-configuration/yaml/)), place it into a folder called `securityconfig`, zip that folder and upload it to a place where it is downloadable via HTTP from inside the cluster (e.g. an S3 bucket). As a starting-point you can use the example from the [opendistro-security github-repo](https://github.com/opendistro-for-elasticsearch/security/tree/master/securityconfig)
 * Create serviceaccount for the framework to use (for TLS certificates to all elastic nodes)
 * Prepare `options.json` (see example in `example/options-elastic.json`)
@@ -35,7 +35,7 @@ For kibana change into the `kibana` folder. Then
 * Upload the kibana package. Either
   * with minio: `dcosdev up`  (environment variables `MINIO_HOST`, `MINIO_ACCESS_KEY` and `MINIO_SECRET_KEY` must be set)
   * with S3: `dcosdev release 0 <bucket-name>`.
-* Add repo-file to your clusters package repositories (e.g. for S3: `dcos package repo add opendistro--index=0 https://<bucket-name>.s3.amazonaws.com/packages/opendistro-kibana/0.1.0-1.2.0/opendistro-kibana-repo.json`)
+* Add repo-file to your clusters package repositories (e.g. for S3: `dcos package repo add opendistro --index=0 https://<bucket-name>.s3.amazonaws.com/packages/opendistro-kibana/0.1.0-1.2.0/opendistro-kibana-repo.json`)
 * Create secrets with username and password to use for authentication against elasticsearch.
 * Prepare `options.json` (see example in `example/options-kibana.json`)
 * Install package with your `options.json`
