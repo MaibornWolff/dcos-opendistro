@@ -1,4 +1,4 @@
 ---
 values:
-  elastic_version: 7.2.0
-  opendistro_security_version: 1.2.0.0
+  elastic_version: 7.3.2
+  opendistro_security_version: 1.3.0.0
