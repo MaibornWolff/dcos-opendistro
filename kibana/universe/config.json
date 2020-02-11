@@ -114,6 +114,11 @@
         "password_secret": {
           "description": "Path to secret containg password to use when authenticating to elastic",
           "type": "string"
+        },
+        "opendistro_security_enabled": {
+          "description": "OpenDistro security plugin is excluded if not enabled",
+          "type": "boolean",
+          "default": true
         }
       },
       "required": [

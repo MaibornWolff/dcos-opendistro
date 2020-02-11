@@ -30,5 +30,11 @@ EOF
 if [ "$KIBANA_ELASTICSEARCH_TLS" = true ]; then
 	echo -e "\nelasticsearch.ssl.certificateAuthorities: $MESOS_SANDBOX/.ssl/ca-bundle.crt\n" >> $KIBANA_YAML
 fi
-$MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana-plugin install file://$MESOS_SANDBOX/opendistro_security_kibana_plugin-${OPENDISTRO_SECURITY_VERSION}.zip
+
+if [ "$OPENDISTRO_SECURITY_ENABLED" = true ] then 
+	$MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana-plugin install file://$MESOS_SANDBOX/opendistro_security_kibana_plugin-${OPENDISTRO_SECURITY_VERSION}.zip
+else
+	sed -i '/^opendistro_security\.multitenancy\.enabled.*$/s/^/#/' $KIBANA_YAML
+fi  
+
 exec $MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana

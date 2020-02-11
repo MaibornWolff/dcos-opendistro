@@ -12,7 +12,7 @@ if [ -n ${SECURITY_CONFIG_URL} ]; then
     FILENAME=$(basename $SECURITY_CONFIG_URL)
 
     rm -rf securityconfig*
-    wget ${SECURITY_CONFIG_URL}
+    curl -o securityconfig.zip ${SECURITY_CONFIG_URL}
     unzip $FILENAME
     rm $FILENAME
 

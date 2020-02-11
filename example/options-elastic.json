@@ -10,7 +10,7 @@
         "mem": 2048
     },
     "elasticsearch": {
-        "health_user": "monitor",
+        "health_user": "CHANGEME",
         "health_user_password": "CHANGEME",
         "plugins": "",
         "opendistro_security_config_zip": "{{s3_base_path}}/securityconfig.zip"

@@ -35,7 +35,8 @@
     "KIBANA_ELASTICSEARCH_TLS": "true",
     "KIBANA_PASSWORD": {"secret": "kibana-password"},
     "KIBANA_USER": {"secret": "kibana-username"},
-    "CUSTOM_YAML_BLOCK_BASE64": "{{kibana.custom_kibana_yml}}"
+    "CUSTOM_YAML_BLOCK_BASE64": "{{kibana.custom_kibana_yml}}",
+    "OPENDISTRO_SECURITY_ENABLED": "{{kibana.opendistro_security_enabled}}"
   },
   "fetch": [
     { "uri": "{{resource.assets.uris.kibana}}", "executable": false, "extract": true, "cache": true }, 
@@ -49,7 +50,7 @@
       "intervalSeconds": 30,
       "ipProtocol": "IPv4",
       "maxConsecutiveFailures": 4,
-      "path": "/status",
+      "path": "/api/status",
       "portIndex": 0,
       "protocol": "MESOS_HTTP",
       "timeoutSeconds": 30

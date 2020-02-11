@@ -2,7 +2,8 @@
     "kibana": {
         "elastic_url": "https://coordinator.opendistro.l4lb.thisdcos.directory:9200",
         "username_secret": "/opendistro-kibana/username",
-        "password_secret": "/opendistro-kibana/password"
+        "password_secret": "/opendistro-kibana/password",
+        "opendistro_security_enabled": false
     },
     "service": {
         "name": "kibana-opendistro",
