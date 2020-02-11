@@ -13,8 +13,7 @@
         "health_user": "CHANGEME",
         "health_user_password": "CHANGEME",
         "plugins": "",
-        "opendistro_security_config_zip": "{{s3_base_path}}/securityconfig.zip",
-        "xpack_security_enabled": true
+        "opendistro_security_config_zip": "{{s3_base_path}}/securityconfig.zip"
     },
     "coordinator_nodes": {
         "count": 1,
