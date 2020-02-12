@@ -4,6 +4,8 @@
     "uris": {
       "kibana": "https://artifacts.elastic.co/downloads/kibana/kibana-%(elastic_version)s-linux-x86_64.tar.gz",
       "opendistro_security_plugin": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/kibana-plugins/opendistro-security/opendistro_security_kibana_plugin-%(opendistro_security_version)s.zip",
+      "opendistro_alerting_plugin": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/kibana-plugins/opendistro-alerting/opendistro-alerting-%(opendistro_alerting_version)s.zip",
+      "opendistro_index_management_plugin": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/kibana-plugins/opendistro-index-management/opendistro_index_management_kibana-%(opendistro_index_management_version)s.zip",
       "kibana_setup": "%(artifacts_url)s/kibana_setup.sh"
     }
   },

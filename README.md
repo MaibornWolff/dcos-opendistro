@@ -2,7 +2,7 @@
 
 A [DC/OS](https://dcos.io/) Framework for [Open Distro for Elasticsearch](https://opendistro.github.io/for-elasticsearch/).
 
-(!) This is a work-in-progress. Use at your own risk and only in test clusters.
+(!) This is a work-in-progress that has not been tested in production. Use at your own risk and only in test clusters.
 
 ## Getting started
 
@@ -47,7 +47,6 @@ You can also use [dcos-deploy](https://github.com/MaibornWolff/dcos-deploy) for 
 * Opendistro Performance analyzer not yet supported.
 * Opendistro specifc configuration options are not yet available as package options. Use the `elasticsearch.custom_elasticsearch_yml` option to configure opendistro.
 * Interoperation between X-Pack and Opendistro not yet validated.
-* Kibana only supports opendistro security at the moment.
 
 ## Contributing
 

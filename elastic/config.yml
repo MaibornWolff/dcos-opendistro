@@ -6,6 +6,8 @@ values:
   opendistro-version: 1.3.0
   opendistro-security-version: 1.3.0.0
   opendistro-alerting-version: 1.3.0.1
+  opendistro-index-management-version: 1.3.0.1
   opendistro-sql-version: 1.3.0.0
+  opendistro-job-scheduler-version: 1.3.0.0
   opendistro-performance-analyzer-version: 1.3.0.0
   elasticsearch-openjdk-version: 11.0.2

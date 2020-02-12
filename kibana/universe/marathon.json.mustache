@@ -32,6 +32,8 @@
     "ELASTICSEARCH_URL": "{{kibana.elastic_url}}",
     "ELASTIC_VERSION": "%(elastic_version)s",
     "OPENDISTRO_SECURITY_VERSION": "%(opendistro_security_version)s",
+    "OPENDISTRO_ALERTING_VERSION": "%(opendistro_alerting_version)s",
+    "OPENDISTRO_INDEX_MANAGEMENT_VERSION": "%(opendistro_index_management_version)s",
     "KIBANA_ELASTICSEARCH_TLS": "true",
     "KIBANA_PASSWORD": {"secret": "kibana-password"},
     "KIBANA_USER": {"secret": "kibana-username"},
@@ -41,6 +43,8 @@
   "fetch": [
     { "uri": "{{resource.assets.uris.kibana}}", "executable": false, "extract": true, "cache": true }, 
     { "uri": "{{resource.assets.uris.opendistro_security_plugin}}", "executable": false, "extract": false, "cache": true },
+    { "uri": "{{resource.assets.uris.opendistro_alerting_plugin}}", "executable": false, "extract": false, "cache": true },
+    { "uri": "{{resource.assets.uris.opendistro_index_management_plugin}}", "executable": false, "extract": false, "cache": true },
     { "uri": "{{resource.assets.uris.kibana_setup}}", "extract": false, "cache": false, "executable": true }
   ],
   "healthChecks": [

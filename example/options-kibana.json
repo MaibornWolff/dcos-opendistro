@@ -6,7 +6,7 @@
         "opendistro_security_enabled": false
     },
     "service": {
-        "name": "kibana-opendistro",
+        "name": "opendistro-kibana",
         "virtual_network_enabled": true,
         "virtual_network_name": "dcos"
     },
