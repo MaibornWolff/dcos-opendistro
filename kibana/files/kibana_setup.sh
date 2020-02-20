@@ -14,14 +14,6 @@ if [ -n  "${CUSTOM_YAML_BLOCK_BASE64}" ]; then
 fi
 echo -e "\n" >> $KIBANA_YAML
 
-cat <<EOF >> $KIBANA_YAML
-xpack.security.enabled: false
-xpack.reporting.enabled: false
-xpack.monitoring.enabled: false
-xpack.spaces.enabled: false
-EOF
-
-
 if [ "$KIBANA_ELASTICSEARCH_TLS" = true ]; then
 	echo -e "\nelasticsearch.ssl.certificateAuthorities: $MESOS_SANDBOX/.ssl/ca-bundle.crt\n" >> $KIBANA_YAML
 fi

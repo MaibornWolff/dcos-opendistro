@@ -758,12 +758,12 @@
           }
         },
         "health_user": {
-          "description": "Elastic username to use for X-Pack authentication, if enabled",
+          "description": "Elastic username to use for security authentication, if enabled",
           "type": "string",
           "default": "elastic"
         },
         "health_user_password": {
-          "description": "Password to use with health_user for X-Pack authentication, if enabled. Note that you are not setting the password here. You are telling the framework the credentials to use when sending in health check requests.",
+          "description": "Password to use with health_user for security authentication, if enabled. Note that you are not setting the password here. You are telling the framework the credentials to use when sending in health check requests.",
           "type": "string",
           "default": "changeme"
         },
@@ -801,46 +801,6 @@
           "description": "URL to a zip containing a folder securityconfig with the opendistro security config yamls",
           "type": "string",
           "default": ""
-        },
-        "xpack_http_proxy_host": {
-          "description": "Specifies the address of the proxy server to use to connect to HTTP services.",
-          "type": "string",
-          "default": ""
-        },
-        "xpack_http_proxy_port": {
-          "description": "Specifies the port number to use to connect to the proxy server.",
-          "type": "string",
-          "default": ""
-        },
-        "xpack_graph_enabled": {
-          "description": "By default, Graph is enabled in Elastic Stack. Set to false to disable graph analytics features.",
-          "type": "boolean",
-          "default": true
-        },
-        "xpack_ml_enabled": {
-          "description": "By default, Machine Learning feature is enabled in Elastic Stack. Set to false to disable machine learning features.",
-          "type": "boolean",
-          "default": true
-        },
-        "xpack_monitoring_collection_enabled": {
-          "description": "Set to true to enable the collection of monitoring data. When this setting is false (default), Elasticsearch monitoring data is not collected and all monitoring data from other sources such as Kibana, Beats, and Logstash is ignored.",
-          "type": "boolean",
-          "default": false
-        },
-        "xpack_monitoring_enabled": {
-          "description": "By default, Monitoring feature is enabled in Elastic Stack. Set to false to disable monitoring features.",
-          "type": "boolean",
-          "default": true
-        },
-        "xpack_sql_enabled": {
-          "description": "Set to false to disable SQL Access on the node. SQL Access is enabled by default",
-          "type": "boolean",
-          "default": true
-        },
-        "xpack_watcher_enabled": {
-          "description": "By default, Watcher feature is enabled in Elastic Stack. Set to false to disable Watcher.",
-          "type": "boolean",
-          "default": true
         },
         "action_destructive_requires_name": {
           "description": "In order to disable allowing to delete indices via wildcards or _all, set it as true.",
@@ -1371,51 +1331,6 @@
           "description": "The socket connect timeout setting (in time setting format). Defaults to 30s.",
           "type": "string",
           "default": "30s"
-        },
-        "xpack_ml_max_anomaly_records": {
-          "description": "The maximum number of records that are output per bucket. Defaults to 500.",
-          "type": "integer",
-          "default": 500
-        },
-        "xpack_ml_max_lazy_ml_nodes": {
-          "description": "The number of lazily spun up Machine Learning nodes. Useful in situations where ML nodes are not desired until the first Machine Learning Job is opened. It defaults to 0 and has a maximum acceptable value of 3.",
-          "type": "integer",
-          "default": 0
-        },
-        "xpack_ml_max_machine_memory_percent": {
-          "description": "The maximum percentage of the machine's memory that machine learning may use for running analytics processes. (These processes are separate to the Elasticsearch JVM.) Defaults to 30 percent.",
-          "type": "integer",
-          "default": 30
-        },
-        "xpack_ml_max_model_memory_limit": {
-          "description": "The maximum model_memory_limit property value that can be set for any job on this node. If you try to create a job with a model_memory_limit property value that is greater than this setting value, an error occurs.",
-          "type": "string",
-          "default": "4096mb"
-        },
-        "xpack_ml_max_open_jobs": {
-          "description": "The maximum number of jobs that can run on a node. Defaults to 20.",
-          "type": "integer",
-          "default": 20
-        },
-        "xpack_ml_node_concurrent_job_allocations": {
-          "description": "The maximum number of jobs that can concurrently be in the opening state on each node. Defaults to 2.",
-          "type": "integer",
-          "default": 2
-        },
-        "xpack_monitoring_default_exporter_use_ingest": {
-          "description": "Whether to supply a placeholder pipeline to the cluster and a pipeline processor with every bulk request. Defaults to false.",
-          "type": "boolean",
-          "default": false
-        },
-        "xpack_monitoring_elasticsearch_collection_enabled": {
-          "description": "Controls whether statistics about your Elasticsearch cluster should be collected. Defaults to true.",
-          "type": "boolean",
-          "default": true
-        },
-        "xpack_watcher_history_cleaner_service_enabled": {
-          "description": "Set to true (default) to enable the cleaner service.",
-          "type": "boolean",
-          "default": true
         },
         "http_content_type_required": {
           "description": "[DEPRECATED][DEPRECATED in 2.5.0-6.3.2] Changing this setting has no effect.",

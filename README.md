@@ -44,9 +44,9 @@ You can also use [dcos-deploy](https://github.com/MaibornWolff/dcos-deploy) for 
 
 ## Limitations
 
-* Opendistro Performance analyzer not yet supported.
+* Opendistro Performance analyzer is not supported.
 * Opendistro specifc configuration options are not yet available as package options. Use the `elasticsearch.custom_elasticsearch_yml` option to configure opendistro.
-* Interoperation between X-Pack and Opendistro not yet validated.
+* Opendistro security multitenancy is not supported.
 
 ## Contributing
 

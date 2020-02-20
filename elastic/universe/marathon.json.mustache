@@ -72,22 +72,10 @@
     "TASKCFG_ALL_SECURITY_ENABLED": "true",
     "ELASTICSEARCH_HTTP_PROTOCOL": "https",
     {{/service.security.transport_encryption.enabled}}
-
     {{^service.security.transport_encryption.enabled}}
-    {{#elasticsearch.xpack_security_enabled}}
-    "TASKCFG_ALL_SECURITY_ENABLED": "true",
-    "ELASTICSEARCH_HTTP_PROTOCOL": "https",
-    {{/elasticsearch.xpack_security_enabled}}
-    {{/service.security.transport_encryption.enabled}}
-
-    {{^service.security.transport_encryption.enabled}}
-    {{^elasticsearch.xpack_security_enabled}}
     "TASKCFG_ALL_SECURITY_ENABLED": "false",
     "ELASTICSEARCH_HTTP_PROTOCOL": "http",
-    {{/elasticsearch.xpack_security_enabled}}
     {{/service.security.transport_encryption.enabled}}
-
-    "TASKCFG_ALL_XPACK_SECURITY_ENABLED": "{{elasticsearch.xpack_security_enabled}}",
 
     {{#service.security.custom_domain}}
     "SERVICE_TLD": "{{service.security.custom_domain}}",
@@ -399,55 +387,6 @@
     {{#elasticsearch.thread_pool_write_size}}
     "TASKCFG_ALL_THREAD_POOL_WRITE_SIZE": "{{elasticsearch.thread_pool_write_size}}",
     {{/elasticsearch.thread_pool_write_size}}
-    {{#elasticsearch.xpack_graph_enabled}}
-    "TASKCFG_ALL_XPACK_GRAPH_ENABLED": "{{elasticsearch.xpack_graph_enabled}}",
-    {{/elasticsearch.xpack_graph_enabled}}
-    {{#elasticsearch.xpack_ml_enabled}}
-    "TASLCFG_ALL_XPACK_ML_ENABLED": "{{elasticsearch.xpack_ml_enabled}}",
-    {{/elasticsearch.xpack_ml_enabled}}
-    {{#elasticsearch.xpack_ml_max_open_jobs}}
-    "TASKCFG_ALL_XPACK_ML_MAX_OPEN_JOBS": "{{elasticsearch.xpack_ml_max_open_jobs}}",
-    {{/elasticsearch.xpack_ml_max_open_jobs}}
-    {{#elasticsearch.xpack_ml_max_anomaly_records}}
-    "TASKCFG_ALL_XPACK_ML_MAX_ANOMALY_RECORDS": "{{elasticsearch.xpack_ml_max_anomaly_records}}",
-    {{/elasticsearch.xpack_ml_max_anomaly_records}}
-    {{#elasticsearch.xpack_ml_max_lazy_ml_nodes}}
-    "TASKCFG_ALL_XPACK_ML_MAX_LAZY_ML_NODES": "{{elasticsearch.xpack_ml_max_lazy_ml_nodes}}",
-    {{/elasticsearch.xpack_ml_max_lazy_ml_nodes}}
-    {{#elasticsearch.xpack_ml_max_machine_memory_percent}}
-    "TASKCFG_ALL_XPACK_ML_MAX_MACHINE_MEMORY_PERCENT": "{{elasticsearch.xpack_ml_max_machine_memory_percent}}",
-    {{/elasticsearch.xpack_ml_max_machine_memory_percent}}
-    {{#elasticsearch.xpack_ml_max_model_memory_limit}}
-    "TASKCFG_ALL_XPACK_ML_MAX_MODEL_MEMORY_LIMIT": "{{elasticsearch.xpack_ml_max_model_memory_limit}}",
-    {{/elasticsearch.xpack_ml_max_model_memory_limit}}
-    {{#elasticsearch.xpack_ml_node_concurrent_job_allocations}}
-    "TASKCFG_ALL_XPACK_ML_NODE_CONCURRENT_JOB_ALLOCATIONS": "{{elasticsearch.xpack_ml_node_concurrent_job_allocations}}",
-    {{/elasticsearch.xpack_ml_node_concurrent_job_allocations}}
-    {{#elasticsearch.xpack_monitoring_enabled}}
-    "TASKCFG_ALL_XPACK_MONITORING_ENABLED": "{{elasticsearch.xpack_monitoring_enabled}}",
-    {{/elasticsearch.xpack_monitoring_enabled}}
-    {{#elasticsearch.xpack_monitoring_collection_enabled}}
-    "TASKCFG_ALL_XPACK_MONITORING_COLLECTION_ENABLED": "{{elasticsearch.xpack_monitoring_collection_enabled}}",
-    {{/elasticsearch.xpack_monitoring_collection_enabled}}
-    {{#elasticsearch.xpack_monitoring_elasticsearch_collection_enabled}}
-    "TASKCFG_ALL_XPACK_MONITORING_ELASTICSEARCH_COLLECTION_ENABLED": "{{elasticsearch.xpack_monitoring_elasticsearch_collection_enabled}}",
-    {{/elasticsearch.xpack_monitoring_elasticsearch_collection_enabled}}
-    "TASKCFG_ALL_XPACK_MONITORING_DEFAULT_EXPORTER_USE_INGEST": "{{elasticsearch.xpack_monitoring_default_exporter_use_ingest}}",
-    {{#elasticsearch.xpack_watcher_enabled}}
-    "TASKCFG_ALL_XPACK_WATCHER_ENABLED": "{{elasticsearch.xpack_watcher_enabled}}",
-    {{/elasticsearch.xpack_watcher_enabled}}
-    {{#elasticsearch.xpack_watcher_history_cleaner_service_enabled}}
-    "TASKCFG_ALL_XPACK_WATCHER_HISTORY_CLEANER_SERVICE_ENABLED": "{{elasticsearch.xpack_watcher_history_cleaner_service_enabled}}",
-    {{/elasticsearch.xpack_watcher_history_cleaner_service_enabled}}
-    {{#elasticsearch.xpack_sql_enabled}}
-    "TASKCFG_ALL_XPACK_SQL_ENABLED": "{{elasticsearch.xpack_sql_enabled}}",
-    {{/elasticsearch.xpack_sql_enabled}}
-    {{#elasticsearch.xpack_http_proxy_host}}
-    "TASKCFG_ALL_XPACK_HTTP_PROXY_HOST": "{{elasticsearch.xpack_http_proxy_host}}",
-    {{/elasticsearch.xpack_http_proxy_host}}
-    {{#elasticsearch.xpack_http_proxy_port}}
-    "TASKCFG_ALL_XPACK_HTTP_PROXY_PORT": "{{elasticsearch.xpack_http_proxy_port}}",
-    {{/elasticsearch.xpack_http_proxy_port}}
     {{#elasticsearch.cluster_max_shards_per_node}}
     "TASKCFG_ALL_CLUSTER_MAX_SHARDS_PER_NODE": "{{elasticsearch.cluster_max_shards_per_node}}",
     {{/elasticsearch.cluster_max_shards_per_node}}

@@ -41,8 +41,6 @@ node.master: false
 node.data: {{DATA_ENABLED}}
 node.ingest: {{INGEST_ENABLED}}
 
-xpack.security.enabled: false
-
 {{#SECURITY_ENABLED}}
 opendistro_security.ssl.transport.enabled: true
 opendistro_security.ssl.transport.keystore_filepath: {{MESOS_SANDBOX}}/node.keystore
@@ -348,58 +346,6 @@ cluster.routing.allocation.balance.threshold: {{CLUSTER_ROUTING_ALLOCATION_BALAN
 {{#INDICES_REQUESTS_CACHE_SIZE}}
 indices.requests.cache.size: {{INDICES_REQUESTS_CACHE_SIZE}}
 {{/INDICES_REQUESTS_CACHE_SIZE}}
-{{#XPACK_GRAPH_ENABLED}}
-xpack.graph.enabled: {{XPACK_GRAPH_ENABLED}}
-{{/XPACK_GRAPH_ENABLED}}
-{{#XPACK_ML_ENABLED}}
-xpack.ml.enabled: {{XPACK_ML_ENABLED}}
-{{/XPACK_ML_ENABLED}}
-{{#XPACK_ML_MAX_OPEN_JOBS}}
-xpack.ml.max_open_jobs: {{XPACK_ML_MAX_OPEN_JOBS}}
-{{/XPACK_ML_MAX_OPEN_JOBS}}
-{{#XPACK_ML_MAX_ANOMALY_RECORDS}}
-xpack.ml.max_anomaly_records: {{XPACK_ML_MAX_ANOMALY_RECORDS}}
-{{/XPACK_ML_MAX_ANOMALY_RECORDS}}
-{{#XPACK_ML_MAX_LAZY_ML_NODES}}
-xpack.ml.max_lazy_ml_nodes: {{XPACK_ML_MAX_LAZY_ML_NODES}}
-{{/XPACK_ML_MAX_LAZY_ML_NODES}}
-{{#XPACK_ML_MAX_MACHINE_MEMORY_PERCENT}}
-xpack.ml.max_machine_memory_percent: {{XPACK_ML_MAX_MACHINE_MEMORY_PERCENT}}
-{{/XPACK_ML_MAX_MACHINE_MEMORY_PERCENT}}
-{{#XPACK_ML_MAX_MODEL_MEMORY_LIMIT}}
-xpack.ml.max_model_memory_limit: {{XPACK_ML_MAX_MODEL_MEMORY_LIMIT}}
-{{/XPACK_ML_MAX_MODEL_MEMORY_LIMIT}}
-{{#XPACK_ML_NODE_CONCURRENT_JOB_ALLOCATIONS}}
-xpack.ml.node_concurrent_job_allocations: {{XPACK_ML_NODE_CONCURRENT_JOB_ALLOCATIONS}}
-{{/XPACK_ML_NODE_CONCURRENT_JOB_ALLOCATIONS}}
-{{#XPACK_MONITORING_ENABLED}}
-xpack.monitoring.enabled: {{XPACK_MONITORING_ENABLED}}
-{{/XPACK_MONITORING_ENABLED}}
-{{^XPACK_MONITORING_DEFAULT_EXPORTER_USE_INGEST}}
-xpack.monitoring.exporters.default_exporter.type: local
-xpack.monitoring.exporters.default_exporter.use_ingest: {{XPACK_MONITORING_DEFAULT_EXPORTER_USE_INGEST}}
-{{/XPACK_MONITORING_DEFAULT_EXPORTER_USE_INGEST}}
-{{#XPACK_MONITORING_COLLECTION_ENABLED}}
-xpack.monitoring.collection.enabled: {{XPACK_MONITORING_COLLECTION_ENABLED}}
-{{/XPACK_MONITORING_COLLECTION_ENABLED}}
-{{#XPACK_MONITORING_ELASTICSEARCH_COLLECTION_ENABLED}}
-xpack.monitoring.elasticsearch.collection.enabled: {{XPACK_MONITORING_ELASTICSEARCH_COLLECTION_ENABLED}}
-{{/XPACK_MONITORING_ELASTICSEARCH_COLLECTION_ENABLED}}
-{{#XPACK_WATCHER_ENABLED}}
-xpack.watcher.enabled: {{XPACK_WATCHER_ENABLED}}
-{{/XPACK_WATCHER_ENABLED}}
-{{#XPACK_WATCHER_HISTORY_CLEANER_SERVICE_ENABLED}}
-xpack.watcher.history.cleaner_service.enabled: {{XPACK_WATCHER_HISTORY_CLEANER_SERVICE_ENABLED}}
-{{/XPACK_WATCHER_HISTORY_CLEANER_SERVICE_ENABLED}}
-{{#XPACK_SQL_ENABLED}}
-xpack.sql.enabled: {{XPACK_SQL_ENABLED}}
-{{/XPACK_SQL_ENABLED}}
-{{#XPACK_HTTP_PROXY_HOST}}
-xpack.http.proxy.host: {{XPACK_HTTP_PROXY_HOST}}
-{{/XPACK_HTTP_PROXY_HOST}}
-{{#XPACK_HTTP_PROXY_PORT}}
-xpack.http.proxy.port: {{XPACK_HTTP_PROXY_PORT}}
-{{/XPACK_HTTP_PROXY_PORT}}
 {{#CLUSTER_MAX_SHARDS_PER_NODE}}
 cluster.max_shards_per_node: {{CLUSTER_MAX_SHARDS_PER_NODE}}
 {{/CLUSTER_MAX_SHARDS_PER_NODE}}

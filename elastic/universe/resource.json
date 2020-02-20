@@ -14,7 +14,7 @@
       "setup-java-policy-file": "%(artifacts_url)s/setup-java-policy.sh",
       "securityadmin-file": "%(artifacts_url)s/securityadmin.sh",
       "elasticsearch-jre-tar-gz": "https://downloads.mesosphere.com/elastic/assets/openjdk-%(elasticsearch-openjdk-version)s_linux-x64_bin.tar.gz",
-      "elasticsearch-tar-gz": "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-%(elastic-version)s-linux-x86_64.tar.gz",
+      "elasticsearch-tar-gz": "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-%(elastic-version)s-linux-x86_64.tar.gz",
       "diagnostics-zip": "https://downloads.mesosphere.com/elastic/assets/support-diagnostics-%(support-diagnostics-version)s-dist.zip",
       "prometheus-exporter-tar-gz": "https://downloads.mesosphere.com/elastic/assets/elasticsearch-prometheus-exporter-%(prom-exporter-version)s-linux-amd64.tar.gz",
       "opendistro-security": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-security/opendistro_security-%(opendistro-security-version)s.zip",
