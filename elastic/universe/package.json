@@ -1,10 +1,10 @@
 {
   "packagingVersion": "4.0",
-  "upgradesFrom": ["0.1.0-1.2.0", "0.1.0-1.3.0"],
-  "downgradesTo": ["0.1.0-1.2.0", "0.1.0-1.3.0"],
+  "upgradesFrom": ["0.1.0-1.2.0", "0.1.0-1.3.0", "0.2.0-1.4.0"],
+  "downgradesTo": ["0.1.0-1.3.0", "0.2.0-1.4.0"],
   "minDcosReleaseVersion": "1.12",
   "name": "opendistro",
-  "version": "0.1.0-1.3.0",
+  "version": "0.2.0-1.4.0",
   "maintainer": "MaibornWolff",
   "description": "Elasticsearch 7 with opendistro plugins",
   "selected": false,
