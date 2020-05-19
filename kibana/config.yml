@@ -1,6 +1,6 @@
 ---
 values:
-  elastic_version: 7.4.2
-  opendistro_security_version: 1.4.0.0
-  opendistro_alerting_version: 1.4.0.0
-  opendistro_index_management_version: 1.4.0.0
+  elastic_version: 7.6.1
+  opendistro_security_version: 1.7.0.0
+  opendistro_alerting_version: 1.7.0.0
+  opendistro_index_management_version: 1.7.0.0

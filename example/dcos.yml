@@ -10,7 +10,7 @@ variables:
     env: AWS_S3_SECRET_KEY
     required: True
   s3_base_path: https://CHANGEME.s3.amazonaws.com
-  package_version: 0.1.0-1.2.0
+  package_version: 0.2.0-1.7.0
 
 opendistro-repo:
   type: repository
