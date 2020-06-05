@@ -1,0 +1,16 @@
+---
+_meta:
+  type: "rolesmapping"
+  config_version: 2
+
+sg_kibana_server:
+  users:
+    - kibanaserver
+
+sg_health:
+  users:
+    - healthcheck
+
+sg_all_access:
+  users:
+    - admin

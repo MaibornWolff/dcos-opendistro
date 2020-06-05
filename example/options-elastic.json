@@ -1,33 +1,6 @@
 {
-    "data_nodes": {
-        "count": 2,
-        "cpus": 1,
-        "disk": 10000,
-        "disk_type": "MOUNT",
-        "heap": {
-            "size": 1024
-        },
-        "mem": 2048
-    },
-    "elasticsearch": {
-        "health_user": "CHANGEME",
-        "health_user_password": "CHANGEME",
-        "plugins": "",
-        "opendistro_security_config_zip": "{{s3_base_path}}/securityconfig.zip"
-    },
-    "coordinator_nodes": {
-        "count": 1,
-        "mem": 2048,
-        "heap": {
-            "size": 1024
-        },
-        "cpus": 1
-    },
-    "config_node": {
-        "enabled": true
-    },
     "service": {
-        "name": "opendistro",
+        "name": "elastic",
         "security": {
             "transport_encryption": {
                 "enabled": true
@@ -38,5 +11,50 @@
         "virtual_network_enabled": true,
         "virtual_network_name": "dcos",
         "update_strategy": "serial"
+    },
+    "master_nodes": {
+        "cpus": 1,
+        "mem": 2048,
+        "disk": 2000,
+        "transport_port": 9200
+    },
+    "data_nodes": {
+        "count": 2,
+        "cpus": 1,
+        "mem": 2048,
+        "heap": {
+            "size": 1024
+        },
+        "disk": 10000
+    },
+    "ingest_nodes": {
+        "count": 0,
+        "cpus": 0.5,
+        "mem": 2048,
+        "disk": 2000
+    },
+    "coordinator_nodes": {
+        "count": 1,
+        "cpus": 0.5,
+        "mem": 2048,
+        "disk": 1000,
+        "heap": {
+            "size": 1024
+        }
+    },
+    "config_node": {
+        "enabled": true,
+        "cpus": 0.5
+    },
+    "prometheus_exporter": {
+        "prometheus_exporter_enabled": true,
+        "cpus": 0.2,
+        "mem": 128,
+        "disk": 256
+    },
+    "elasticsearch": {
+        "health_user": "healthcheck",
+        "health_user_password": "healthcheck",
+        "opendistro_security_config_zip": "{{s3_base_path}}/securityconfig.zip"
     }
 }

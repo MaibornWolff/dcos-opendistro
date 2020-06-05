@@ -1,0 +1,17 @@
+---
+_meta:
+  type: "internalusers"
+  config_version: 2
+
+admin:
+  # Password: admin
+  hash: $2a$12$yr7hkPh/X2xEVcbdtVeEM.eVF9h4rdCoYX3MdWHT0LGZ6nG6AH3N2
+
+kibanaserver:
+  # Password: kibanaserver
+  hash: $2a$12$f2Svrq2XhufBeITspd.n3u/iN9DwhPTN/i9ZKYQtjemaD/MOtmnVi
+
+healthcheck:
+  # Password: healthcheck
+  hash: $2a$12$MItcfZtzryddpMvEASZPH.zTYnEJTmT82fgWOL9/qUwczdhfmGrCi
+

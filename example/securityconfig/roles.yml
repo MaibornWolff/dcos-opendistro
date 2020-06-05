@@ -1,0 +1,61 @@
+---
+_meta:
+  type: "roles"
+  config_version: 2
+
+
+# Default role for all users (including anonymous)
+sg_public:
+  cluster_permissions:
+    - cluster:monitor/main
+    - CLUSTER_COMPOSITE_OPS_RO
+
+
+# Allows everything
+sg_all_access:
+  cluster_permissions:
+    - UNLIMITED
+  index_permissions:
+    - index_patterns:
+        - '*'
+      allowed_actions:
+        - UNLIMITED
+
+
+# For the kibana server
+sg_kibana_server:
+  cluster_permissions:
+    - CLUSTER_MONITOR
+    - CLUSTER_COMPOSITE_OPS
+    - cluster:monitor/nodes/info
+    - cluster:monitor/state
+    - indices:admin/get
+    - indices:admin/template*
+    - indices:data/read/scroll*
+    - indices:data/write/reindex
+    - indices:admin/create
+    - indices:admin/aliases
+    - indices:admin/refresh
+  index_permissions:
+    - index_patterns:
+        - '?kibana*'
+      allowed_actions:
+        - INDICES_ALL
+        - indices:data/write/reindex
+        - indices:admin/get
+        - indices:admin/create
+        - indices:admin/aliases
+        - indices:admin/refresh*
+    - index_patterns:
+        - '*'
+      allowed_actions:
+        - indices:admin/aliases/get
+        - indices:data/read/scroll*
+
+
+# For the health check user
+sg_health:
+  cluster_permissions:
+    - cluster:monitor/health
+    - CLUSTER_COMPOSITE_OPS_RO
+    - CLUSTER_MONITOR

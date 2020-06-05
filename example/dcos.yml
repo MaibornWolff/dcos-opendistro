@@ -1,26 +1,29 @@
+# This example is intended to be used with minio and after running "dcosdev up" (see README.md) for elastic and kibana
+
 variables:
-  s3_endpoint: s3.eu-central-1.amazonaws.com
-  s3_bucket: CHANGEME
-  # If you want to use minio instead set s3_endpoint to the external URL of your mino installation and use http://minio.marathon.l4lb.thisdcos.directory:9000/my-bucket as s3_base_path.
-  # If you want to use dcos-deploy to upload the zip file provide your aws credentials using environment varibales AWS_S3_ACCESS_KEY and AWS_S3_SECRET_KEY. If not comment out the next six lines.
+  s3_endpoint:
+    env: MINIO_HOST
+    required: True
+  s3_bucket: artifacts
   s3_access_key:
-    env: AWS_S3_ACCESS_KEY
+    env: MINIO_ACCESS_KEY
     required: True
   s3_secret_key:
-    env: AWS_S3_SECRET_KEY
+    env: MINIO_SECRET_KEY
     required: True
-  s3_base_path: https://CHANGEME.s3.amazonaws.com
-  package_version: 0.2.0-1.7.0
+  s3_base_path: http://minio.marathon.l4lb.thisdcos.directory:9000/artifacts
+  package_version: snapshot
+
 
 opendistro-repo:
   type: repository
   name: opendistro
-  uri: "{{s3_base_path}}/packages/opendistro/{{package_version}}/opendistro-repo.json"
+  uri: "{{s3_base_path}}/opendistro/opendistro-repo.json"
 
 opendistro-kibana-repo:
   type: repository
   name: opendistro-kibana
-  uri: "{{s3_base_path}}/packages/opendistro-kibana/{{package_version}}/opendistro-kibana-repo.json"
+  uri: "{{s3_base_path}}/opendistro-kibana/opendistro-kibana-repo.json"
 
 
 elastic-principal:
@@ -31,15 +34,16 @@ elastic-principal:
     - superusers
 
 
-# Comment out this block if you want to upload the zip yourself.
 securityconfig:
   type: s3file
-  # TODO: File must be provided
-  source: securityconfig.zip
+  source: securityconfig
+  compress: zip
   server:
     endpoint: "{{s3_endpoint}}"
     access_key: "{{s3_access_key}}"
     secret_key: "{{s3_secret_key}}"
+    secure: true
+    ssl_verify: false
   destination:
     bucket: "{{s3_bucket}}"
     key: "securityconfig.zip"
@@ -59,13 +63,14 @@ elastic:
 
 kibana-username:
   type: secret
-  path: opendistro-kibana/username
+  path: kibana/username
   value: "kibana"
 
 kibana-password:
   type: secret
-  path: opendistro-kibana/password
-  value: "CHANGEME"
+  path: kibana/password
+  value: "kibanaserver"
+
 
 kibana:
   type: framework
@@ -75,6 +80,6 @@ kibana:
     options: "options-kibana.json"
   dependencies:
     - opendistro-kibana-repo
-    - kibana-username
-    - kibana-password
+    - kibana-username:update
+    - kibana-password:update
     - elastic

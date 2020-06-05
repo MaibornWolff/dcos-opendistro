@@ -1,18 +1,20 @@
 {
-    "kibana": {
-        "elastic_url": "https://coordinator.opendistro.l4lb.thisdcos.directory:9200",
-        "username_secret": "/opendistro-kibana/username",
-        "password_secret": "/opendistro-kibana/password",
-        "opendistro_security_enabled": false
-    },
     "service": {
-        "name": "opendistro-kibana",
-        "virtual_network_enabled": true,
-        "virtual_network_name": "dcos"
+      "name": "kibana",
+      "virtual_network_enabled": true,
+      "virtual_network_name": "dcos"
     },
     "node": {
-        "count": 1,
-        "mem": 8192,
-        "cpus": 1
+      "count": 1,
+      "cpus": 1,
+      "mem": 2048
+    },
+    "kibana": {
+      "elastic_url": "https://coordinator.elastic.l4lb.thisdcos.directory:9200",
+      "username_secret": "/kibana/username",
+      "password_secret": "/kibana/password",
+      "opendistro_security": {
+        "enabled": true
+      }
     }
-}
+  }

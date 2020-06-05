@@ -24,7 +24,7 @@ For elasticsearch change into the `elastic` folder. Then
 * Upload the elastic package. Either
   * with minio: `dcosdev up`  (environment variables `MINIO_HOST`, `MINIO_ACCESS_KEY` and `MINIO_SECRET_KEY` must be set)
   * with S3: `dcosdev release 0 <bucket-name>`.
-* Add the repo-file to your clusters package repositories (e.g. for S3: `dcos package repo add opendistro --index=0 https://<bucket-name>.s3.amazonaws.com/packages/opendistro/0.2.0-1.7.0/opendistro-repo.json`)
+* Add the repo-file to your clusters package repositories (e.g. for S3: `dcos package repo add opendistro --index=0 https://<bucket-name>.s3.amazonaws.com/packages/opendistro/0.2.1-1.8.0/opendistro-repo.json`)
 * Prepare security config (see [opendistro documentation](https://opendistro.github.io/for-elasticsearch-docs/docs/security-configuration/yaml/)), place it into a folder called `securityconfig`, zip that folder and upload it to a place where it is downloadable via HTTP from inside the cluster (e.g. an S3 bucket). As a starting-point you can use the example from the [opendistro-security github-repo](https://github.com/opendistro-for-elasticsearch/security/tree/master/securityconfig)
 * Create serviceaccount for the framework to use (for TLS certificates to all elastic nodes)
 * Prepare `options.json` (see example in `example/options-elastic.json`)
@@ -35,17 +35,17 @@ For kibana change into the `kibana` folder. Then
 * Upload the kibana package. Either
   * with minio: `dcosdev up`  (environment variables `MINIO_HOST`, `MINIO_ACCESS_KEY` and `MINIO_SECRET_KEY` must be set)
   * with S3: `dcosdev release 0 <bucket-name>`.
-* Add repo-file to your clusters package repositories (e.g. for S3: `dcos package repo add opendistro --index=0 https://<bucket-name>.s3.amazonaws.com/packages/opendistro-kibana/0.2.0-1.7.0/opendistro-kibana-repo.json`)
+* Add repo-file to your clusters package repositories (e.g. for S3: `dcos package repo add opendistro --index=0 https://<bucket-name>.s3.amazonaws.com/packages/opendistro-kibana/0.2.1-1.8.0/opendistro-kibana-repo.json`)
 * Create secrets with username and password to use for authentication against elasticsearch.
 * Prepare `options.json` (see example in `example/options-kibana.json`)
 * Install package with your `options.json`
 
-You can also use [dcos-deploy](https://github.com/MaibornWolff/dcos-deploy) for deployment (everything except building and uploading the packages). All you need is in the `example` folder. Make the necessary changes and then run `dcos-deploy apply`.
+You can also use [dcos-deploy](https://github.com/MaibornWolff/dcos-deploy) for deployment (everything except building and uploading the packages). All you need is in the `example` folder. It is configured to be used with minio and after `dcosdev up`. You deploy the example run `dcos-deploy apply`.
 
 ## Limitations
 
 * Opendistro Performance analyzer is not supported.
-* Opendistro specifc configuration options are not yet available as package options. Use the `elasticsearch.custom_elasticsearch_yml` option to configure opendistro.
+* Most Opendistro specifc configuration options are not yet available as package options. Use the `elasticsearch.custom_elasticsearch_yml` (for elasticsearch) and `kibana.extra_config_base64` (for kibana) options to configure opendistro.
 * Opendistro security multitenancy is not supported.
 
 ## Contributing
@@ -54,7 +54,7 @@ If you find a bug or have a feature request, please open an issue in Github. Or,
 
 ## Acknowledgements
 
-This framework is based heavily on the [DC/OS Elastic service](https://github.com/mesosphere/dcos-elastic-service/) and was developed using a fork of [dcosdev](https://github.com/mesosphere/dcosdev). Thanks to Mesosphere for providing these tools.
+This framework is based heavily on the [DC/OS Elastic service](https://github.com/mesosphere/dcos-elastic-service/) and was developed using a fork of [dcosdev](https://github.com/mesosphere/dcosdev). Thanks to [D2iQ](https://d2iq.com) for providing these tools.
 
 ## Disclaimer
 
