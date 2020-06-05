@@ -229,6 +229,7 @@ pods:
         {{/TASKCFG_ALL_SECURITY_ENABLED}}
   ingest:
     count: {{INGEST_NODE_COUNT}}
+    allow-decommission: true
     {{#ENABLE_VIRTUAL_NETWORK}}
     networks:
       {{VIRTUAL_NETWORK_NAME}}:

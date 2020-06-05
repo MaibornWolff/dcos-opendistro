@@ -103,7 +103,7 @@
           "type": "string"
         },
         "extra_config_base64": {
-          "description": "",
+          "description": "extra config to be placed in the kibana.yml",
           "type": "string",
           "default": ""
         },
@@ -115,10 +115,53 @@
           "description": "Path to secret containg password to use when authenticating to elastic",
           "type": "string"
         },
-        "opendistro_security_enabled": {
-          "description": "OpenDistro security plugin is excluded if not enabled",
-          "type": "boolean",
-          "default": true
+        "opendistro_security": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "description": "OpenDistro security plugin is excluded if not enabled",
+              "type": "boolean",
+              "default": true
+            },
+            "openid": {
+              "type": "object",
+              "description": "OpenID connect authentication for Kibana. See https://opendistro.github.io/for-elasticsearch-docs/docs/security-configuration/openid-connect/#kibana-single-sign-on",
+              "properties": {
+                "enabled": {
+                  "description": "Enable openid connect authentication",
+                  "type": "boolean",
+                  "default": false
+                },
+                "root_ca_secret": {
+                  "description": "Path to a secret that contains PEM CA certificate files that can be used to validate the TLS connection to the openid identity provider",
+                  "type": "string",
+                  "default": ""
+                },
+                "connect_url": {
+                  "description": "The URL where the IdP publishes the OpenID metadata",
+                  "type": "string"
+                },
+                "base_redirect_url": {
+                  "description": "The base of the redirect URL that will be sent to your IdP. Only necessary when Kibana is behind a reverse proxy",
+                  "type": "string",
+                  "default": ""
+                },
+                "logout_url": {
+                  "description": "The logout URL of your IdP. Only necessary if your IdP does not publish the logout URL in its metadata",
+                  "type": "string",
+                  "default": ""
+                },
+                "client_id": {
+                  "description": "The ID of the OpenID Connect client configured in your IdP",
+                  "type": "string"
+                },
+                "client_secret": {
+                  "description": "The client secret of the OpenID Connect client configured in your IdP",
+                  "type": "string"
+                }
+              }
+            }
+          }
         }
       },
       "required": [

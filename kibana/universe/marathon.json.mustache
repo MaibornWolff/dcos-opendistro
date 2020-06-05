@@ -11,7 +11,14 @@
   "disk": 0,
   "container": {
     "type": "MESOS",
-    "volumes": [],
+    "volumes": [
+      {{#kibana.opendistro_security.openid.root_ca_secret}}
+      {
+        "containerPath": "openid_ca.pem",
+        "secret": "openid_ca"
+      }
+      {{/kibana.opendistro_security.openid.root_ca_secret}}
+    ],
     "portMappings": [
       {
         "containerPort": 5601,
@@ -37,8 +44,19 @@
     "KIBANA_ELASTICSEARCH_TLS": "true",
     "KIBANA_PASSWORD": {"secret": "kibana-password"},
     "KIBANA_USER": {"secret": "kibana-username"},
-    "CUSTOM_YAML_BLOCK_BASE64": "{{kibana.custom_kibana_yml}}",
-    "OPENDISTRO_SECURITY_ENABLED": "{{kibana.opendistro_security_enabled}}"
+    "CUSTOM_YAML_BLOCK_BASE64": "{{kibana.extra_config_base64}}",
+    {{#kibana.opendistro_security.openid.enabled}}
+    "OPENDISTRO_OPENID_ENABLED":"true",
+    {{#kibana.opendistro_security.openid.root_ca_secret}}
+    "OPENDISTRO_OPENID_ROOT_CA_ENABLED": "true",
+    {{/kibana.opendistro_security.openid.root_ca_secret}}
+    "OPENDISTRO_OPENID_CONNECT_URL": "{{kibana.opendistro_security.openid.connect_url}}",
+    "OPENDISTRO_OPENID_BASE_REDIRECT_URL": "{{kibana.opendistro_security.openid.base_redirect_url}}",
+    "OPENDISTRO_OPENID_LOGOUT_URL": "{{kibana.opendistro_security.openid.logout_url}}",
+    "OPENDISTRO_OPENID_CLIENT_ID": "{{kibana.opendistro_security.openid.client_id}}",
+    "OPENDISTRO_OPENID_CLIENT_SECRET": "{{kibana.opendistro_security.openid.client_secret}}",
+    {{/kibana.opendistro_security.openid.enabled}}
+    "OPENDISTRO_SECURITY_ENABLED": "{{kibana.opendistro_security.enabled}}"
   },
   "fetch": [
     { "uri": "{{resource.assets.uris.kibana}}", "executable": false, "extract": true, "cache": true }, 
@@ -81,6 +99,11 @@
    "expungeAfterSeconds": 0
   },
   "secrets": {
+    {{#kibana.opendistro_security.openid.root_ca_secret}}
+    "openid_ca": {
+      "source": "{{kibana.opendistro_security.openid.root_ca_secret}}"
+    },
+    {{/kibana.opendistro_security.openid.root_ca_secret}}
     "kibana-username": {
       "source": "{{kibana.username_secret}}"
     },
