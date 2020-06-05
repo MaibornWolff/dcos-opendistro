@@ -22,7 +22,8 @@
       "opendistro-index-management": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-index-management/opendistro_index_management-%(opendistro-index-management-version)s.zip",
       "opendistro-sql": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-sql/opendistro_sql-%(opendistro-sql-version)s.zip",
       "opendistro-job-scheduler": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-job-scheduler/opendistro-job-scheduler-%(opendistro-job-scheduler-version)s.zip",
-      "opendistro-performance-analyzer": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/performance-analyzer/opendistro_performance_analyzer-%(opendistro-performance-analyzer-version)s.zip"
+      "opendistro-performance-analyzer": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/performance-analyzer/opendistro_performance_analyzer-%(opendistro-performance-analyzer-version)s.zip",
+      "opendistro-anomaly-detection": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-anomaly-detection/opendistro-anomaly-detection-%(opendistro-anomaly-detection-version)s.zip"
     }
   },
   "images": {
