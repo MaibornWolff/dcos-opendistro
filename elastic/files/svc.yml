@@ -366,7 +366,11 @@ pods:
         labels: "DCOS_METRICS_FORMAT:prometheus,DCOS_METRICS_PORT_INDEX:0,DCOS_METRICS_ENDPOINT:/metrics"
         ports:
           exporter:
-            port: 9114
+            port: 0
+            env-key: METRICS_PORT
+            vip:
+              prefix: exporter
+              port: 9114
         volume:
           path: "container-path"
           type: {{PROMETHEUS_EXPORTER_DISK_TYPE}}

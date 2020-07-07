@@ -1,11 +1,11 @@
 
 {
   "packagingVersion": "4.0",
-  "upgradesFrom": ["0.2.0-1.7.0", "0.2.1-1.8.0"],
-  "downgradesTo": ["0.2.0-1.7.0", "0.2.1-1.8.0"],
+  "upgradesFrom": ["0.2.0-1.7.0", "0.2.1-1.8.0", "0.2.2-1.8.0"],
+  "downgradesTo": ["0.2.0-1.7.0", "0.2.1-1.8.0", "0.2.2-1.8.0"],
   "minDcosReleaseVersion": "1.12",
   "name": "opendistro-kibana",
-  "version": "0.2.1-1.8.0",
+  "version": "0.2.2-1.8.0",
   "maintainer": "MaibornWolff",
   "description": "MaibornWolff",
   "selected": false,
