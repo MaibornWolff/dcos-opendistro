@@ -386,11 +386,13 @@ pods:
         {{#ELASTICSEARCH_HEALTH_USER_PASSWORD}}
           exec ./elasticsearch_exporter-{{ELASTICSEARCH_PROMETHEUS_EXPORTER_VERSION}}.linux-amd64/elasticsearch_exporter \
             --es.uri="{{ELASTICSEARCH_HTTP_PROTOCOL}}://{{ELASTICSEARCH_HEALTH_USER}}:{{ELASTICSEARCH_HEALTH_USER_PASSWORD}}@master.${FRAMEWORK_NAME//\//}.l4lb.thisdcos.directory:9200" \
+            --web.listen-address=:$METRICS_PORT \
             {{{PROMETHEUS_EXPORTER_CONFIGURATION_OPTIONS}}}
         {{/ELASTICSEARCH_HEALTH_USER_PASSWORD}}
         {{^ELASTICSEARCH_HEALTH_USER_PASSWORD}}
           exec ./elasticsearch_exporter-{{ELASTICSEARCH_PROMETHEUS_EXPORTER_VERSION}}.linux-amd64/elasticsearch_exporter \
             --es.uri="{{ELASTICSEARCH_HTTP_PROTOCOL}}://master.${FRAMEWORK_NAME//\//}.l4lb.thisdcos.directory:9200" \
+            --web.listen-address=:$METRICS_PORT \
             {{{PROMETHEUS_EXPORTER_CONFIGURATION_OPTIONS}}}
         {{/ELASTICSEARCH_HEALTH_USER_PASSWORD}}
         env:
