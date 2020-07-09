@@ -398,7 +398,7 @@ pods:
         env:
           ELASTICSEARCH_PROMETHEUS_EXPORTER_VERSION: {{ELASTICSEARCH_PROMETHEUS_EXPORTER_VERSION}}
         readiness-check:
-          cmd: "curl --silent --output /dev/null --fail --write-out %{http_code} localhost:9114/health"
+          cmd: "curl --silent --output /dev/null --fail --write-out %{http_code} localhost:$METRICS_PORT/health"
           interval: {{PROMETHEUS_EXPORTER_READINESS_CHECK_INTERVAL}}
           delay: {{PROMETHEUS_EXPORTER_READINESS_CHECK_DELAY}}
           timeout: {{PROMETHEUS_EXPORTER_READINESS_CHECK_TIMEOUT}}
