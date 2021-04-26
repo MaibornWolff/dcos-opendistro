@@ -1,14 +1,14 @@
 ---
 values:
-  elastic-version: 7.7.0
-  support-diagnostics-version: 7.0.9
+  elastic-version: 7.10.2
+  support-diagnostics-version: 7.1.5
   prom-exporter-version: 1.1.0
-  opendistro-version: 1.8.0
-  opendistro-security-version: 1.8.0.0
-  opendistro-alerting-version: 1.8.0.0
-  opendistro-index-management-version: 1.8.0.0
-  opendistro-sql-version: 1.8.0.0
-  opendistro-job-scheduler-version: 1.8.0.0
-  opendistro-performance-analyzer-version: 1.8.0.0
-  opendistro-anomaly-detection-version: 1.8.0.0
-  elasticsearch-openjdk-version: 11.0.2
+  opendistro-version: 1.13.2
+  opendistro-security-version: 1.13.1.0
+  opendistro-alerting-version: 1.13.1.0
+  opendistro-index-management-version: 1.13.2.0
+  opendistro-sql-version: 1.13.2.0
+  opendistro-job-scheduler-version: 1.13.0.0
+  opendistro-performance-analyzer-version: 1.13.0.0
+  opendistro-anomaly-detection-version: 1.13.0.0
+  elasticsearch-openjdk-version: 13.0.2
