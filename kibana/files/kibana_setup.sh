@@ -19,7 +19,7 @@ if [ "$KIBANA_ELASTICSEARCH_TLS" = true ]; then
 fi
 
 if [ "$OPENDISTRO_SECURITY_ENABLED" = true ]; then
-	$MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana-plugin install file://$MESOS_SANDBOX/opendistro_security_kibana_plugin-${OPENDISTRO_SECURITY_VERSION}.zip
+	$MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana-plugin install file://$MESOS_SANDBOX/opendistroSecurityKibana-${OPENDISTRO_SECURITY_VERSION}.zip
 cat << EOF >> $KIBANA_YAML
 elasticsearch.username: $KIBANA_USER
 elasticsearch.password: $KIBANA_PASSWORD
@@ -43,7 +43,7 @@ EOF
 	fi
 fi
 
-$MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana-plugin install file://$MESOS_SANDBOX/opendistro-alerting-${OPENDISTRO_ALERTING_VERSION}.zip
-$MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana-plugin install file://$MESOS_SANDBOX/opendistro_index_management_kibana-${OPENDISTRO_SECURITY_VERSION}.zip
+$MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana-plugin install file://$MESOS_SANDBOX/opendistroAlertingKibana-${OPENDISTRO_ALERTING_VERSION}.zip
+$MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana-plugin install file://$MESOS_SANDBOX/opendistroIndexManagementKibana-${OPENDISTRO_SECURITY_VERSION}.zip
 
 exec $MESOS_SANDBOX/kibana-$ELASTIC_VERSION-linux-x86_64/bin/kibana

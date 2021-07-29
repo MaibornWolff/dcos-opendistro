@@ -17,12 +17,12 @@
       "elasticsearch-tar-gz": "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-%(elastic-version)s-linux-x86_64.tar.gz",
       "diagnostics-zip": "https://downloads.mesosphere.com/elastic/assets/support-diagnostics-%(support-diagnostics-version)s-dist.zip",
       "prometheus-exporter-tar-gz": "https://downloads.mesosphere.com/elastic/assets/elasticsearch-prometheus-exporter-%(prom-exporter-version)s-linux-amd64.tar.gz",
-      "opendistro-security": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-security/opendistro_security-%(opendistro-security-version)s.zip",
-      "opendistro-alerting": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-alerting/opendistro_alerting-%(opendistro-alerting-version)s.zip",
-      "opendistro-index-management": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-index-management/opendistro_index_management-%(opendistro-index-management-version)s.zip",
-      "opendistro-sql": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-sql/opendistro_sql-%(opendistro-sql-version)s.zip",
+      "opendistro-security": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-security/opendistro-security-%(opendistro-security-version)s.zip",
+      "opendistro-alerting": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-alerting/opendistro-alerting-%(opendistro-alerting-version)s.zip",
+      "opendistro-index-management": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-index-management/opendistro-index-management-%(opendistro-index-management-version)s.zip",
+      "opendistro-sql": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-sql/opendistro-sql-%(opendistro-sql-version)s.zip",
       "opendistro-job-scheduler": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-job-scheduler/opendistro-job-scheduler-%(opendistro-job-scheduler-version)s.zip",
-      "opendistro-performance-analyzer": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/performance-analyzer/opendistro_performance_analyzer-%(opendistro-performance-analyzer-version)s.zip",
+      "opendistro-performance-analyzer": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/performance-analyzer/opendistro-performance-analyzer-%(opendistro-performance-analyzer-version)s.zip",
       "opendistro-anomaly-detection": "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-anomaly-detection/opendistro-anomaly-detection-%(opendistro-anomaly-detection-version)s.zip"
     }
   },
