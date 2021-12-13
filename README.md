@@ -1,3 +1,6 @@
+# END OF LIFE
+This project is not being maintained anymore.
+
 # Opendistro for DC/OS
 
 A [DC/OS](https://dcos.io/) Framework for [Open Distro for Elasticsearch](https://opendistro.github.io/for-elasticsearch/).
